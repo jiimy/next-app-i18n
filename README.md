@@ -8,7 +8,11 @@ npm i
 npm run dev
 ```
 ## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+실제 텍스트가 들어갈 json 파일에 {{변수}} 를 정의하고, 
+렌더링 되는 코드 상에서 
+```tsx
+  <Trans i18nKey="languageSwitcher" t={t}>
+        Switch from <strong>{{ lng }}</strong> to:{' '}
+      </Trans>
+```
+처럼 받은 {{lng}}을 넣을수있는데.. type지정을 하지 않으면 {{lng }}부분에서 에러가 나고, 타입지정을 d.ts에서 지정해줘도 빌드시에 문제가 될 수 있다. ㅇ
